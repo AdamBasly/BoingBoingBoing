@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://cfnwr5dqura6g"]
+
+[ext_resource type="Script" path="res://character_body_3d.gd" id="1_xcbxq"]
+[ext_resource type="ArrayMesh" uid="uid://batenihvp8fwj" path="res://textures/A380.obj" id="2_80r0c"]
+[ext_resource type="Script" path="res://camera_3d.gd" id="2_g2b3q"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_33oyd"]
+size = Vector3(1, 1.12451, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2olsy"]
+size = Vector3(1.05957, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_215q4"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45661, 0)
+script = ExtResource("1_xcbxq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(101.583, 0, 0, 0, -38.1426, 0, 0, 0, 101.583, 0, 21.0196, 0)
+shape = SubResource("BoxShape3D_33oyd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+transform = Transform3D(0.0187852, 4.4806e-05, 0.000220158, -0.00021591, -0.00149085, 0.018726, 6.21299e-05, -0.0187272, -0.00149023, 0, 12.9934, 0)
+mesh = ExtResource("2_80r0c")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(0.990306, 0.12096, 0.0682909, -0.128013, 0.603878, 0.78673, 0.0539237, -0.787845, 0.613508, -3.75137, 63.7745, 92.2922)
+fov = 117.356
+script = ExtResource("2_g2b3q")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.574626, 1.40393, -0.071764)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(5270.08, 0, 0, 0, 12.7557, 0, 0, 0, 5381.72, -0.0815574, 0, 0)
+shape = SubResource("BoxShape3D_2olsy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(2622.72, 0, 0, 0, 2622.72, 0, 0, 0, 2622.72, -0.0226443, 0.0218258, -0.0108016)
+mesh = SubResource("PlaneMesh_215q4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.101456, 0.99484, 0, -0.99484, 0.101456, 0.574626, 74.1266, -0.071764)

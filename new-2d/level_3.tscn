@@ -1,0 +1,158 @@
+[gd_scene load_steps=11 format=3 uid="uid://c0bgoengdrvsr"]
+
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_ani3l"]
+[ext_resource type="Script" path="res://area_2d_4.gd" id="2_xdoeu"]
+[ext_resource type="Script" path="res://mesh_instance_2d_2.gd" id="3_ay7du"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_i3v56"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_s1bqc"]
+a = Vector2(-266, -27)
+b = Vector2(386, -26)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6tjvw"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_tjmxb"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_5x7ef"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xeo6"]
+size = Vector2(53.5132, 20)
+
+[sub_resource type="QuadMesh" id="QuadMesh_i17gw"]
+
+[node name="Level3" type="Node2D"]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(151, 128)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D2"]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(432.197, 333.999)
+scale = Vector2(651.605, -20.0027)
+mesh = SubResource("BoxMesh_i3v56")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(374, 352)
+shape = SubResource("SegmentShape2D_s1bqc")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(576, 323)
+script = ExtResource("1_ani3l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_6tjvw")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CharacterBody2D"]
+position = Vector2(-0.999986, -1)
+scale = Vector2(22, 14.5)
+mesh = SubResource("CapsuleMesh_tjmxb")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="CharacterBody2D"]
+modulate = Color(0.692316, 0.686253, 7.70092e-07, 1)
+position = Vector2(-3, -14)
+scale = Vector2(33.2227, -11.8227)
+mesh = SubResource("QuadMesh_5x7ef")
+script = ExtResource("3_ay7du")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(803, 128)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D3"]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(432.197, 333.999)
+scale = Vector2(651.605, -20.0027)
+mesh = SubResource("BoxMesh_i3v56")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(374, 352)
+shape = SubResource("SegmentShape2D_s1bqc")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(1717, 176)
+rotation = 0.646887
+scale = Vector2(0.391948, 0.965296)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D4"]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(432.197, 333.999)
+scale = Vector2(651.605, -20.0027)
+mesh = SubResource("BoxMesh_i3v56")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(374, 352)
+shape = SubResource("SegmentShape2D_s1bqc")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(1267, 458)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D5"]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(432.197, 333.999)
+scale = Vector2(651.605, -20.0027)
+mesh = SubResource("BoxMesh_i3v56")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(374, 352)
+shape = SubResource("SegmentShape2D_s1bqc")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2(1707, 833)
+rotation = -1.57486
+scale = Vector2(0.425359, 0.982927)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D6"]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(432.197, 333.999)
+scale = Vector2(651.605, -20.0027)
+mesh = SubResource("BoxMesh_i3v56")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(374, 352)
+shape = SubResource("SegmentShape2D_s1bqc")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="."]
+position = Vector2(626, 458)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D7"]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(432.197, 333.999)
+scale = Vector2(651.605, -20.0027)
+mesh = SubResource("BoxMesh_i3v56")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7"]
+position = Vector2(374, 352)
+shape = SubResource("SegmentShape2D_s1bqc")
+
+[node name="StaticBody2D8" type="StaticBody2D" parent="."]
+position = Vector2(502, 458)
+rotation = -0.678221
+scale = Vector2(-0.19291, 1.21433)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D8"]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(432.197, 333.999)
+scale = Vector2(651.605, -20.0027)
+mesh = SubResource("BoxMesh_i3v56")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8"]
+position = Vector2(374, 352)
+shape = SubResource("SegmentShape2D_s1bqc")
+
+[node name="Area2D3" type="Area2D" parent="."]
+position = Vector2(-851, 689)
+scale = Vector2(-12.5321, 1.25051)
+script = ExtResource("2_xdoeu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(-107.896, 253)
+scale = Vector2(0.366326, 3.92968)
+shape = SubResource("RectangleShape2D_3xeo6")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Area2D3"]
+position = Vector2(-108, 253)
+scale = Vector2(19.4161, -76.1033)
+mesh = SubResource("QuadMesh_i17gw")

@@ -1,0 +1,55 @@
+[gd_scene load_steps=7 format=3 uid="uid://dtihbaukrmnq"]
+
+[ext_resource type="FontFile" uid="uid://dr2uxyxh8stn7" path="res://textures/Minecraft-Seven_v2.ttf" id="1_h8l5f"]
+[ext_resource type="Script" path="res://button7.gd" id="2_mpdd7"]
+[ext_resource type="Script" path="res://button_2.gd" id="3_j6taq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_cr5mc"]
+font = ExtResource("1_h8l5f")
+shadow_size = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bexul"]
+size = Vector2(201, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pmpfx"]
+size = Vector2(201, 61)
+
+[node name="Winlevel3" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 401.0
+offset_top = 130.0
+offset_right = 548.0
+offset_bottom = 152.0
+text = "Du hast gewonnen!"
+label_settings = SubResource("LabelSettings_cr5mc")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 383.0
+offset_top = 315.0
+offset_right = 585.0
+offset_bottom = 377.0
+text = "Nächstes Level"
+script = ExtResource("2_mpdd7")
+next_scene = "res://level5.tscn"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Button"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button/StaticBody2D"]
+position = Vector2(99.5, 31)
+shape = SubResource("RectangleShape2D_bexul")
+
+[node name="Button2" type="Button" parent="Button"]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 164.0
+offset_right = 659.0
+offset_bottom = 226.0
+text = "Zurück zum Menü"
+script = ExtResource("3_j6taq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Button/Button2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button/Button2/StaticBody2D"]
+position = Vector2(99.5, 31)
+shape = SubResource("RectangleShape2D_pmpfx")

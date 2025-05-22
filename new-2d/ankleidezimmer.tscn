@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=3 uid="uid://c2iu0ix4l6m52"]
+
+[ext_resource type="Theme" uid="uid://bu5l3v1i2cjiy" path="res://themes/Seven.tres" id="1_dcxer"]
+[ext_resource type="Script" path="res://button5.gd" id="1_jyr20"]
+[ext_resource type="Script" path="res://button_2.gd" id="2_1vp07"]
+[ext_resource type="Script" path="res://mesh_instance_2d_2.gd" id="3_1gnhf"]
+[ext_resource type="Texture2D" uid="uid://4n6c6rmc2buj" path="res://textures/flags/tunisia.jpg" id="5_mcbjv"]
+[ext_resource type="Script" path="res://button_3.gd" id="5_up4wi"]
+[ext_resource type="Texture2D" uid="uid://cwhqgvg1j62t0" path="res://textures/flags/germany.jpg" id="6_4cqh8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_aosca"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbwpp"]
+size = Vector2(201, 61)
+
+[sub_resource type="QuadMesh" id="QuadMesh_yfj1i"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_i8uo1"]
+
+[node name="Ankleidezimmer" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+material = SubResource("CanvasItemMaterial_aosca")
+offset_left = 383.0
+offset_top = 312.0
+offset_right = 497.0
+offset_bottom = 343.0
+scale = Vector2(1.01267, 1.3115)
+theme = ExtResource("1_dcxer")
+text = "Goldener Hut"
+script = ExtResource("1_jyr20")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 634.0
+offset_top = 410.0
+offset_right = 836.0
+offset_bottom = 472.0
+theme = ExtResource("1_dcxer")
+text = "Zurück zum Menü"
+script = ExtResource("2_1vp07")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Button2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button2/StaticBody2D"]
+position = Vector2(99.5, 31)
+shape = SubResource("RectangleShape2D_vbwpp")
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
+modulate = Color(0.692316, 0.686253, 7.70092e-07, 1)
+position = Vector2(430, 263)
+scale = Vector2(33.2227, -11.8227)
+mesh = SubResource("QuadMesh_yfj1i")
+script = ExtResource("3_1gnhf")
+
+[node name="Button3" type="Button" parent="."]
+material = SubResource("CanvasItemMaterial_aosca")
+offset_left = 539.0
+offset_top = 312.0
+offset_right = 653.0
+offset_bottom = 343.0
+scale = Vector2(1.01267, 1.3115)
+theme = ExtResource("1_dcxer")
+text = "Tunesien"
+script = ExtResource("5_up4wi")
+skin_texture = "res://textures/flags/tunisia.jpg"
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(592, 276)
+scale = Vector2(22, 14.5)
+mesh = SubResource("CapsuleMesh_i8uo1")
+texture = ExtResource("5_mcbjv")
+
+[node name="Tunisia" type="Sprite2D" parent="."]
+position = Vector2(595, 223)
+scale = Vector2(0.205105, -0.168244)
+texture = ExtResource("5_mcbjv")
+
+[node name="Germany" type="Sprite2D" parent="."]
+position = Vector2(797, 218)
+scale = Vector2(0.209193, 0.180764)
+texture = ExtResource("6_4cqh8")
+
+[node name="Button4" type="Button" parent="."]
+material = SubResource("CanvasItemMaterial_aosca")
+offset_left = 743.0
+offset_top = 308.0
+offset_right = 857.0
+offset_bottom = 339.0
+scale = Vector2(1.01267, 1.3115)
+theme = ExtResource("1_dcxer")
+text = "Deutschland"
+script = ExtResource("1_jyr20")
+
+[node name="MeshInstance2D3" type="MeshInstance2D" parent="."]
+position = Vector2(799, 281)
+scale = Vector2(21.68, -15.327)
+mesh = SubResource("CapsuleMesh_i8uo1")
+texture = ExtResource("6_4cqh8")

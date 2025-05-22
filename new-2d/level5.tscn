@@ -1,0 +1,134 @@
+[gd_scene load_steps=12 format=3 uid="uid://doq6wb8fie48u"]
+
+[ext_resource type="Script" path="res://character_body_2d.gd" id="1_f2tp6"]
+[ext_resource type="Script" path="res://mesh_instance_2d.gd" id="2_qsc40"]
+[ext_resource type="Script" path="res://mesh_instance_2d_2.gd" id="3_7jicc"]
+[ext_resource type="FontFile" uid="uid://dr2uxyxh8stn7" path="res://textures/Minecraft-Seven_v2.ttf" id="4_73nn1"]
+[ext_resource type="Script" path="res://area_2d_4.gd" id="5_8wp4e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6fj63"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_afclm"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_1rlbo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lrckd"]
+font = ExtResource("4_73nn1")
+font_size = 100
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lyjid"]
+size = Vector2(49, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxw14"]
+size = Vector2(13.2874, 18.3146)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(576, 323)
+script = ExtResource("1_f2tp6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_6fj63")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="CharacterBody2D"]
+position = Vector2(1.40667e-05, -1)
+scale = Vector2(23.0805, 16.1212)
+mesh = SubResource("CapsuleMesh_afclm")
+script = ExtResource("2_qsc40")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="CharacterBody2D"]
+modulate = Color(0.692316, 0.686253, 7.70092e-07, 1)
+position = Vector2(-2, -18)
+scale = Vector2(33.2227, -11.8227)
+mesh = SubResource("QuadMesh_1rlbo")
+script = ExtResource("3_7jicc")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 543.0
+offset_top = 406.0
+offset_right = 603.0
+offset_bottom = 496.0
+text = "B"
+label_settings = SubResource("LabelSettings_lrckd")
+horizontal_alignment = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Label3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Label3/StaticBody2D"]
+position = Vector2(29.4375, 44.5)
+shape = SubResource("RectangleShape2D_lyjid")
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 723.0
+offset_top = 344.0
+offset_right = 783.0
+offset_bottom = 434.0
+text = "O"
+label_settings = SubResource("LabelSettings_lrckd")
+horizontal_alignment = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Label4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Label4/StaticBody2D"]
+position = Vector2(29.5, 44.5)
+shape = SubResource("RectangleShape2D_lyjid")
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 904.0
+offset_top = 491.0
+offset_right = 964.0
+offset_bottom = 581.0
+text = "I"
+label_settings = SubResource("LabelSettings_lrckd")
+horizontal_alignment = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Label5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Label5/StaticBody2D"]
+position = Vector2(28, 44.5)
+shape = SubResource("RectangleShape2D_lyjid")
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 1086.0
+offset_top = 331.0
+offset_right = 1146.0
+offset_bottom = 421.0
+text = "N"
+label_settings = SubResource("LabelSettings_lrckd")
+horizontal_alignment = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Label6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Label6/StaticBody2D"]
+position = Vector2(29.4375, 44.5)
+shape = SubResource("RectangleShape2D_lyjid")
+
+[node name="Label7" type="Label" parent="."]
+offset_left = 1231.0
+offset_top = 494.0
+offset_right = 1291.0
+offset_bottom = 584.0
+text = "G"
+label_settings = SubResource("LabelSettings_lrckd")
+horizontal_alignment = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Label7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Label7/StaticBody2D"]
+position = Vector2(29.4375, 44.5)
+shape = SubResource("RectangleShape2D_lyjid")
+
+[node name="Area2D3" type="Area2D" parent="."]
+position = Vector2(-203, 341)
+scale = Vector2(-12.5321, 1.25051)
+script = ExtResource("5_8wp4e")
+next_level = "res://winlevel_6.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(-116.78, 158.335)
+scale = Vector2(0.366326, 3.92968)
+shape = SubResource("RectangleShape2D_qxw14")
